@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+<!--    when scope is prototype object will be created only when getBean method is called-->
+<!--    when scope is singleton whenever the IOC container loads object will be created-->
+<!--    <bean id="alien1" class="org.example.Alien" scope="prototype">-->
+<!--Two times object will be created even if id is different-->
+<!--    </bean>-->
+<!--    <bean id="alien2" class="org.example.Alien">-->
+
+<!--    </bean>-->
+
+        <bean id="alien1" class="org.example.Alien">
+            <property name="age" value="21"/>
+            <property name="comp" ref="comp1"/>
+
+            <!--                <property name="age" value="21"></property>-->
+<!--            //this will call setter function and set the age-->
+            <!--            <property name="lap" ref="laptop"/>-->
+<!--            <constructor-arg value="21"/>-->
+
+<!--            <constructor-arg ref="laptop"/>-->
+<!--            <constructor-arg type="org.example.Laptop" ref="laptop"/>-->
+<!--            <constructor-arg type="int" value="21"/>-->
+<!--            using type attribute we can assign the values even if order changes-->
+<!--            using index attribute we can assign the values even if order changes-->
+<!--            <constructor-arg index="1" ref="laptop"/>-->
+<!--            <constructor-arg index="0" value="21"/>-->
+
+        </bean>
+
+    <bean id="comp1" class="org.example.Laptop" >
+
+    </bean>
+    <bean id="comp2" class="org.example.Desktop" lazy-init="true"/>
+
+</beans>
+
+<!--property tag will set using setter injection-->
+<!--constructorarg will set using constructor injection-->
+<!--autowire byname will work only when property tag is not mentioned it will allocate the value to variable with name-->
+<!--lazyinit will load the object only when explicitly called-->

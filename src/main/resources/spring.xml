@@ -17,6 +17,12 @@
         <bean id="alien1" class="org.example.Alien">
             <property name="age" value="21"/>
             <property name="comp" ref="comp1"/>
+<!--            <property name="comp">-->
+<!--                <bean id="comp1" class="org.example.Laptop" >-->
+
+<!--                </bean>-->
+<!--            </property>  -->
+<!--            Innerbean-->
 
             <!--                <property name="age" value="21"></property>-->
 <!--            //this will call setter function and set the age-->
